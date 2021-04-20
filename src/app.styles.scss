@@ -1,0 +1,22 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "app-header app-header"
+    "app-sidebar app-content"
+    "app-footer app-footer ";
+  .app-header {
+    grid-area: app-header;
+  }
+  .app-footer {
+    grid-area: app-footer;
+  }
+  .app-content {
+    grid-area: app-content;
+  }
+  .app-sidebar {
+    grid-area: app-sidebar;
+  }
+}

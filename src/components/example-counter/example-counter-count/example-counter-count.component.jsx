@@ -1,0 +1,20 @@
+import { connect } from "react-redux";
+
+const ExampleCounterCount = (props) => {
+  const { count } = props;
+  return (
+    <div className="example-counter-count">
+      <h1 variant="h1" component="h4">
+        {`Count: `}
+      </h1>
+      <h1 variant="h1" component="h4" data-testid="count">
+        {`${count}`}
+      </h1>
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  count: state.exampleCounter.count,
+});
+export default connect(mapStateToProps)(ExampleCounterCount);

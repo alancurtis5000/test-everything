@@ -1,0 +1,11 @@
+body {
+  font-family: $black;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: $white;
+}
+
+html {
+  // allows for rems to match pixel by power of 10.
+  font-size: 62.5%;
+}
