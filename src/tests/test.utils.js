@@ -2,15 +2,14 @@
 // this is a custom render for components connected to redux
 import React from "react";
 import { render as rtlRender } from "@testing-library/react";
-import { createStore } from "redux";
+import configureAppStore from "../redux/configure-store";
 import { Provider } from "react-redux";
-import rootReducer from "../redux/root.reducer";
 
 function render(
   ui,
   {
-    initialState,
-    store = createStore(rootReducer, initialState),
+    preloadedState,
+    store = configureAppStore(preloadedState),
     ...renderOptions
   } = {}
 ) {

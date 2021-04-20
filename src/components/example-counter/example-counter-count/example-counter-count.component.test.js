@@ -1,5 +1,5 @@
 // We're using our own custom render function for redux conneceted compoenentsand not RTL's render
-import { render, cleanup } from "@/_new_src/tests/test.utils";
+import { render, cleanup } from "../../../tests/test.utils";
 import ExampleCounterCount from "./example-counter-count.component";
 
 describe("ExampleCounterCount", () => {

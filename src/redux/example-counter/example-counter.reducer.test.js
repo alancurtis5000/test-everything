@@ -1,5 +1,5 @@
-import { cleanup } from "@/_new_src/tests/test.utils";
-import configureAppStore from "@/_new_src/redux/configure-store";
+import { cleanup } from "../../tests/test.utils";
+import configureAppStore from "../configure-store";
 import * as actions from "./example-counter.actions";
 import exampleCounterReducer, { initialState } from "./example-counter.reducer";
 // Note: When writing test for reducers we are testing against

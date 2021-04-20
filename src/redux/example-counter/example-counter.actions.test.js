@@ -1,4 +1,4 @@
-import { cleanup } from "@/_new_src/tests/test.utils";
+import { cleanup } from "../../tests/test.utils";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
