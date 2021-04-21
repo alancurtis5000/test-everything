@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "yarn test -- --coverage --watchAll=false ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +43,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "./node_modules/",
+      "./public/",
+      "./.vscode/"
+    ]
   }
+
 }
