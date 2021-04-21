@@ -7,9 +7,7 @@ import ExampleCounterMargin from "./example-counter-margin/example-counter-margi
 const ExampleCounter = () => {
   return (
     <div className="example-counter">
-      <h1 variant="h1" component="h2">
-        ExampleCounter
-      </h1>
+      <h1>ExampleCounter</h1>
       <ExampleCounterCount />
       <ExampleCounterMargin />
       <div className="button-container">
