@@ -10,25 +10,17 @@ Object {
         <div
           class="example-counter"
         >
-          <h1
-            component="h2"
-            variant="h1"
-          >
+          <h1>
             ExampleCounter
           </h1>
           <div
             class="example-counter-count"
           >
-            <h1
-              component="h4"
-              variant="h1"
-            >
+            <h1>
               Count: 
             </h1>
             <h1
-              component="h4"
               data-testid="count"
-              variant="h1"
             >
               0
             </h1>
@@ -87,25 +79,17 @@ Object {
       <div
         class="example-counter"
       >
-        <h1
-          component="h2"
-          variant="h1"
-        >
+        <h1>
           ExampleCounter
         </h1>
         <div
           class="example-counter-count"
         >
-          <h1
-            component="h4"
-            variant="h1"
-          >
+          <h1>
             Count: 
           </h1>
           <h1
-            component="h4"
             data-testid="count"
-            variant="h1"
           >
             0
           </h1>
