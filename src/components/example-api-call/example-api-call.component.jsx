@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import { exampleApiCall } from "../../redux/example-api-call/example-api-call.actions";
+import isEmpty from "lodash/isEmpty";
+
 const ExampleApiCall = (props) => {
   const { exampleApiCall, exampleApiCallRedux } = props;
   const { error, data, isLoaded } = exampleApiCallRedux;
@@ -18,10 +20,21 @@ const ExampleApiCall = (props) => {
     return isLoaded ? null : <div>...Loading...</div>;
   };
 
+  const renderNoResults = () => {
+    let check = isEmpty(data);
+    console.log({ check });
+    if (isEmpty(data) && isLoaded) {
+      return <div>...No results found...</div>;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div className="example-api-call">
       <h1>ExampleApiCall</h1>
       {renderLoading()}
+      {renderNoResults()}
       <div>
         <div>Quote:</div>
         <div>{text}</div>
@@ -29,7 +42,6 @@ const ExampleApiCall = (props) => {
         <div>{author}</div>
       </div>
       {renderError()}
-
       <button onClick={handleOnClick}>Get Quote</button>
     </div>
   );
