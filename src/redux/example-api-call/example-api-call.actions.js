@@ -23,12 +23,10 @@ export const exampleApiCallFailure = (error) => (dispatch) => {
 export const exampleApiCall = () => (dispatch) => {
   dispatch(exampleApiCallStart());
   return axios
-    .get(
-      "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json"
-    )
+    .get("https://goquotes-api.herokuapp.com/api/v1/random?count=1")
     .then((response) => {
       console.log(response.data);
-      dispatch(exampleApiCallSuccess(response.data));
+      dispatch(exampleApiCallSuccess(response.data.quotes[0]));
     })
     .catch((error) => {
       console.log(error);

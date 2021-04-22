@@ -3,7 +3,7 @@ import { exampleApiCall } from "../../redux/example-api-call/example-api-call.ac
 const ExampleApiCall = (props) => {
   const { exampleApiCall, exampleApiCallRedux } = props;
   const { error, data, isLoaded } = exampleApiCallRedux;
-  const { quoteText, quoteAuthor } = data;
+  const { text, author } = data;
 
   const handleOnClick = () => {
     console.log("handleOnClick");
@@ -24,9 +24,9 @@ const ExampleApiCall = (props) => {
       {renderLoading()}
       <div>
         <div>Quote:</div>
-        <div>{quoteText}</div>
+        <div>{text}</div>
         <div>Author:</div>
-        <div>{quoteAuthor}</div>
+        <div>{author}</div>
       </div>
       {renderError()}
 
