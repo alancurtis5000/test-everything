@@ -3,19 +3,22 @@ import ExampleCounterContextAdd from "./example-counter-context-add/example-coun
 import ExampleCounterContextMinus from "./example-counter-context-minus/example-counter-context-minus.component";
 import ExampleCounterContextReset from "./example-counter-context-reset/example-counter-context-reset.component";
 import ExampleCounterContextMargin from "./example-counter-context-margin/example-counter-context-margin.component";
+import ExampleCounterContextProvider from "../../providers/example-counter-context/example-counter-context.provider";
 
 const ExampleCounterContext = () => {
   return (
-    <div className="example-counter-context">
-      <h1>ExampleCounterContext</h1>
-      <ExampleCounterContextCount />
-      <ExampleCounterContextMargin />
-      <div className="button-container">
-        <ExampleCounterContextAdd />
-        <ExampleCounterContextMinus />
-        <ExampleCounterContextReset />
+    <ExampleCounterContextProvider>
+      <div className="example-counter-context">
+        <h1>ExampleCounterContext</h1>
+        <ExampleCounterContextCount />
+        <ExampleCounterContextMargin />
+        <div className="button-container">
+          <ExampleCounterContextAdd />
+          <ExampleCounterContextMinus />
+          <ExampleCounterContextReset />
+        </div>
       </div>
-    </div>
+    </ExampleCounterContextProvider>
   );
 };
 

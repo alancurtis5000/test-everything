@@ -1,7 +1,8 @@
-import { connect } from "react-redux";
+import { useContext } from "react";
+import { ExampleCounterContext } from "../../../providers/example-counter-context/example-counter-context.provider";
 
-const ExampleCounterContextCount = (props) => {
-  const { count } = props;
+const ExampleCounterContextCount = () => {
+  const { count } = useContext(ExampleCounterContext);
   return (
     <div className="example-counter-count">
       <h1>{`Count: `}</h1>
@@ -10,7 +11,4 @@ const ExampleCounterContextCount = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  count: state.exampleCounter.count,
-});
-export default connect(mapStateToProps)(ExampleCounterContextCount);
+export default ExampleCounterContextCount;

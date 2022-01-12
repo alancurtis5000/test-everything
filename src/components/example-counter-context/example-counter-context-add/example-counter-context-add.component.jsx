@@ -1,13 +1,13 @@
-import { connect } from "react-redux";
-import { exampleCounterIncrement } from "../../../redux/example-counter/example-counter.actions";
+import { useContext } from "react";
+import { ExampleCounterContext } from "../../../providers/example-counter-context/example-counter-context.provider";
 
-const ExampleCounterContextAdd = (props) => {
-  const { exampleCounterIncrement, margin } = props;
+const ExampleCounterContextAdd = () => {
+  const { increment, margin } = useContext(ExampleCounterContext);
   return (
     <div className="example-counter-add">
       <button
         className="add"
-        onClick={exampleCounterIncrement}
+        onClick={() => increment()}
         data-testid="add"
         disabled={margin === 0}
       >
@@ -17,14 +17,4 @@ const ExampleCounterContextAdd = (props) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  exampleCounterIncrement: () => dispatch(exampleCounterIncrement()),
-});
-
-const mapStateToProps = (state) => ({
-  margin: state.exampleCounter.margin,
-});
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ExampleCounterContextAdd);
+export default ExampleCounterContextAdd;
