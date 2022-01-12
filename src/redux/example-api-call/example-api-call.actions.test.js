@@ -23,14 +23,14 @@ describe("counterActions", () => {
     expect(true).toEqual(true);
   });
 
-  it("increment action fired", () => {
-    const expectedActions = [
-      {
-        type: types.EXAMPLE_COUNTER_INCREMENT,
-        payload: { count: 1 },
-      },
-    ];
-    store.dispatch(actions.exampleCounterIncrement());
-    expect(store.getActions()).toEqual(expectedActions);
-  });
+  // it("increment action fired", () => {
+  //   const expectedActions = [
+  //     {
+  //       type: types.EXAMPLE_COUNTER_INCREMENT,
+  //       payload: { count: 1 },
+  //     },
+  //   ];
+  //   store.dispatch(actions.exampleCounterIncrement());
+  //   expect(store.getActions()).toEqual(expectedActions);
+  // });
 });

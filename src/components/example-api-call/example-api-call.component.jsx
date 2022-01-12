@@ -8,23 +8,20 @@ const ExampleApiCall = (props) => {
   const { text, author } = data;
 
   const handleOnClick = () => {
-    console.log("handleOnClick");
     exampleApiCall();
   };
 
   const renderError = () => {
-    return error ? <div>{error}</div> : null;
+    return error ? <div data-testid="error">{error}</div> : null;
   };
 
   const renderLoading = () => {
-    return isLoaded ? null : <div>...Loading...</div>;
+    return isLoaded ? null : <div data-testid="is-loading">...Loading...</div>;
   };
 
   const renderNoResults = () => {
-    let check = isEmpty(data);
-    console.log({ check });
     if (isEmpty(data) && isLoaded) {
-      return <div>...No results found...</div>;
+      return <div data-testid="no-results">...No results found...</div>;
     } else {
       return null;
     }
@@ -37,12 +34,14 @@ const ExampleApiCall = (props) => {
       {renderNoResults()}
       <div>
         <div>Quote:</div>
-        <div>{text}</div>
+        <div data-testid="quote-text">{text}</div>
         <div>Author:</div>
-        <div>{author}</div>
+        <div data-testid="quote-author">{author}</div>
       </div>
       {renderError()}
-      <button onClick={handleOnClick}>Get Quote</button>
+      <button data-testid="get-quote" onClick={handleOnClick}>
+        Get Quote
+      </button>
     </div>
   );
 };
