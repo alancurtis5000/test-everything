@@ -1,32 +1,19 @@
-import { connect } from "react-redux";
-
-import { exampleCounterUpdateMargin } from "../../../redux/example-counter/example-counter.actions";
+import { useContext } from "react";
+import { ExampleCounterContext } from "../../../providers/example-counter-context/example-counter-context.provider";
 
 const ExampleCounterContextMargin = (props) => {
-  const { margin, exampleCounterUpdateMargin } = props;
+  const { margin, updateMargin } = useContext(ExampleCounterContext);
   return (
     <div className="example-counter-margin">
       <input
         value={margin}
         type="number"
         id="margin"
-        onChange={(e) => exampleCounterUpdateMargin(e.target.value * 1)}
+        onChange={(e) => updateMargin(e.target.value * 1)}
         data-testid="margin"
       />
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  margin: state.exampleCounter.margin,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  exampleCounterUpdateMargin: (updatedMargin) =>
-    dispatch(exampleCounterUpdateMargin(updatedMargin)),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ExampleCounterContextMargin);
+export default ExampleCounterContextMargin;

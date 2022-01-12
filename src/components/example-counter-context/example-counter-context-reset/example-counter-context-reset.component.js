@@ -1,22 +1,15 @@
-import { connect } from "react-redux";
-import { exampleCounterReset } from "../../../redux/example-counter/example-counter.actions";
+import { useContext } from "react";
+import { ExampleCounterContext } from "../../../providers/example-counter-context/example-counter-context.provider";
 
-const ExampleCounterContextReset = (props) => {
-  const { exampleCounterReset } = props;
+const ExampleCounterContextReset = () => {
+  const { reset } = useContext(ExampleCounterContext);
   return (
     <div className="example-counter-reset">
-      <button
-        className="reset"
-        onClick={exampleCounterReset}
-        data-testid="reset"
-      >
+      <button className="reset" onClick={() => reset()} data-testid="reset">
         Reset
       </button>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  exampleCounterReset: () => dispatch(exampleCounterReset()),
-});
-export default connect(null, mapDispatchToProps)(ExampleCounterContextReset);
+export default ExampleCounterContextReset;
